@@ -1,0 +1,27 @@
+
+
+.fondo{
+    background-image: url(/assets/img/ladrii.jpg);
+    background-repeat: repeat;
+    background-size: 25%; 
+}
+
+.interior{
+  margin-top: 40px;
+  background-image: url(/assets/img/pizarra.jpg);
+  background-size: cover;
+  border: silver 7px solid;
+  border-radius: 20px;
+}
+
+
+
+@media screen and (max-width:450px){
+
+
+  .interior{
+   
+    border: silver 3px solid;
+    border-radius: 10px;
+  }
+}

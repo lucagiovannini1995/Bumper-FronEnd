@@ -1,0 +1,134 @@
+
+<section >
+
+
+  <div *ngIf="!prodService.mostrar">
+    <h3>Cargando...</h3>
+    <div class="loader loader--style1" title="0">
+        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+          s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+          c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+          C22.32,8.481,24.301,9.057,26.013,10.047z">
+          <animateTransform attributeType="xml"
+            attributeName="transform"
+            type="rotate"
+            from="0 20 20"
+            to="360 20 20"
+            dur="3000s"
+            repeatCount="indefinite"/>
+          </path>
+        </svg>
+      </div>
+  </div>
+
+  <div class=" menu-bebida" > 
+
+    <button  (click)="obtenerBebida('Bebidas blancas y Aperitivos')" class="item-bebida" >
+      <img src="assets/img/bebidas blancas.png" alt="" >
+    </button> 
+
+    <button  (click)="obtenerBebida('Cervezas')" class="item-bebida ">
+        <img src="assets/img/cerveza.png" alt="" >
+    </button> 
+
+    <button  (click)="obtenerBebida('Gaseosas')" class="item-bebida " >
+        <img src="assets/img/gaseosa.png" alt="">
+       </button> 
+
+       <button (click)="obtenerBebida('Jugos')" class="item-bebida " >
+         <img src="assets/img/jugos.png" alt="">
+       </button>
+       
+       <button  (click)="obtenerBebida('Energizante')" class="item-bebida " >
+          <img src="assets/img/energizante.png" alt="">
+        </button>
+ 
+
+ 
+  </div>
+
+
+
+ 
+
+  
+  <div class="container" style="color: lightgray" >
+  <div *ngIf="bebBla">
+      
+      <h3>Bebidas Blancas y Aperitivos</h3>
+  </div>
+  <div *ngIf="gas">
+      
+      <h3>Gaseosas</h3>
+  </div>
+  <div *ngIf="cerveza">
+      
+      <h3>Cervezas</h3>
+  </div>
+  <div *ngIf="jug">
+      
+      <h3>Jugos</h3>
+  </div>
+  <div *ngIf="ene">
+     
+      <h3>Energizantes</h3>
+  </div>
+ 
+</div>
+
+
+  <div *ngIf="prodService.mostrar" class=" catalogo">
+    <div *ngFor="let p of productos; let i=index" >
+
+
+
+        <div class="card1">
+            <div>
+              <button *ngIf="logService.getActivar()" (click)="borrarProd(p._id)" class="btn-borrar" title="Eliminar">
+                  <img src="assets/img/borrar.png" alt="" >
+                </button>
+              </div>
+            <img [src]="p.imagen" alt="" class="imagen" >
+      
+            <div class="text-center card-footer">
+              <h5 ><b>{{p.nombre}}</b></h5> 
+              <h6 class="text-danger">${{p.precio}}</h6> 
+            </div>
+         
+
+
+
+
+          <div *ngIf="logService.getActivar()" class="formu">
+            
+                          
+            <input id="subir"  type="file" (change)="cambiar($event,i)" accept=".jpg"  title="Editar" >
+            <input   type="text" name="nombre" [(ngModel)]="p.nombre"   #nombre>
+            <input type="number" name="precio" [(ngModel)]="p.precio" #precio>
+          
+       
+                <button class="btn btn-primary m-2 " (click)="editarProd(p,nombre,precio)">Guardar           
+                        <img src="assets/img/boton-guardar.png" alt="">
+                </button>
+                <button class="btn btn-danger m-2" (click)="cancelar()">Cancelar
+                      <img src="assets/img/error.png" alt="">
+              </button>
+              
+           
+          
+           
+        </div>
+
+      </div>
+    
+     </div>
+
+  </div>
+  
+
+
+
+</section>

@@ -1,0 +1,87 @@
+
+<section class="">
+
+
+  <div class="titulo" style="color: lightgray">
+
+        <h4  style="text-align: center;">Contacto</h4>
+
+      <p  style="text-align: center;">Bumper te brinda lo que necesitas!<br>Puedes contactarnos por  whatsApp o enviando tu consulta por la pagina.</p>
+    
+
+  </div>
+
+
+
+
+  <div class="row-map">
+    <div class="card-gen">
+      
+      <div class="map" >
+        <agm-map id="map-arrow" [latitude]="lat" [longitude]="lng" >
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+        </div>
+  
+
+    </div>
+
+
+    <div class="card-gen" >
+     
+      <div class="direccion"style="" >
+        <p class="">Juan Domingo Perón 398<br>Resistencia, Chaco<br>Argentina</p>
+        <p> 
+          <span class=""> 
+            <span style="color: white"> Telefono  </span> 362 469-1873</span>
+               <br>
+               <span class="">
+                  <span >Email &nbsp;&nbsp; </span>
+                  <a href="#0">bumperblack@gmail.com</a></span></p>
+      </div>
+
+    </div>
+  </div>
+  
+
+
+
+
+
+<div class="row-formu">
+
+          <div class="card-gen" >
+            
+              <div class=" formulario" >
+
+                  <div class="" style="color: black;text-align: center;">
+                      <h4 >-Realice su consulta:</h4>
+                    <p> 
+                    
+                  </div>
+                  <form  action="#0" class="" (ngSubmit)="contactForm(form.value)" #form="ngForm" style="display: block;" >
+                    
+                      <input type="text" placeholder="* Name"  name="nombre" [(ngModel)]="mail.nombre" >
+                      <input type="text" placeholder="* Asunto"  name="asunto"[(ngModel)]="mail.asunto" >
+                      <input type="email" placeholder="* Email" name="email" [(ngModel)]="mail.email" >
+                      <textarea placeholder="Message ..." rows="4"   name="mensaje" [(ngModel)]="mail.mensaje"  style="width: 90%;"></textarea>
+                  
+                      
+                        <button  type="submit" class="" style="color: black">Enviar
+                            
+                        </button>
+                 
+                    </form>
+              </div>
+          </div>
+          <div class="card-gen"  >
+
+              <div style="margin: 10% 4%;">
+                  <img src="assets/img/Bumper-img.jpg" alt="" class="foto" >
+              </div>
+
+          </div>
+</div>
+
+ 
+</section>

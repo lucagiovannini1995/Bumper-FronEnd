@@ -1,0 +1,46 @@
+
+  .titulo{
+
+    display: block;
+    margin:30px 300px;
+  }
+
+  .titulo img{
+    border-radius:20px;
+    border:white 3px solid;
+  }
+
+  
+
+  .titulo img{
+
+    border-radius:20px;
+    border:white 3px solid;
+  }
+
+
+
+  @media screen and (max-width:1200px) and (min-width:700px){
+ 
+    .titulo {
+      margin: 2px 200px;
+      display: block;
+
+    }
+
+    .titulo img{
+      border-radius:10px;
+      border:white 2px solid;
+  
+    }
+  }
+
+  @media screen and (max-width:767px){
+
+    .titulo {
+      width: 90%;
+      display: block;
+      margin: 2px auto;
+
+    }
+  }

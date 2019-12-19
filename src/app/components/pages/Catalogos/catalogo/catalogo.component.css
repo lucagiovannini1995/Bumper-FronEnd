@@ -1,0 +1,175 @@
+body{
+    padding-top:10px;
+  }
+ 
+
+  .menu{
+    display: flex;
+    justify-content: center;
+  
+     
+  }
+
+  .menu a{
+    margin: 5% 4%;
+border-radius: 20px;
+  }
+
+
+  .menu a:hover{
+    box-shadow: 0 8px 28px 0 rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+    transition-duration: 0.7s;   
+  }
+  .menu img{
+    border-radius:20px; border:white 3px solid;
+  }
+
+
+
+
+
+
+  .card-agregar{
+    margin-left: 10%;
+   width: 300px; 
+   background-color: lightgrey;
+   border-radius: 5px;
+    border:solid white;
+ 
+  }
+
+  .card-agregar .foto-prod{
+    width: 90%;
+    display: block;
+    margin: 30px auto;
+  }
+  
+
+  .card-agregar  input[type="file"]{
+    text-align: center;
+    width: 90%;
+   
+    margin: 10px 5%;
+  }
+
+ 
+
+
+  .inputs-agregar{
+    text-align: center
+  }
+  .inputs-agregar input[type="text"], input[type="number"]{
+    text-align: center;
+    width: 95%;
+    height: 30px;
+  }
+
+
+.botones-agregar{
+  text-align: center;
+  
+}
+.botones-agregar .btn{
+  margin: 5px auto;
+  width: 200px;
+}
+
+
+
+
+  .enlace{
+grid-auto-columns: 70%;
+grid-auto-rows: 70%;
+  }
+
+  .heighttext{
+  height:20px
+}
+
+
+.subir{
+  padding: 5px 10px;
+  
+  background:white;
+  color:#fff;
+  border:0px solid #fff;
+}
+
+.subir:hover{
+  color:#fff;
+  background: #dadada;
+  border-block-style: inherit;
+}
+
+
+.edit{display: grid;
+   grid-template-columns: repeat(12,1fr);  
+   grid-gap: 1rem; 
+  margin-left: 5em;
+  }
+
+
+
+  .btn-agregar{
+    border: silver 2px solid;
+    border-radius: 15px;
+    font-size: 15px;
+    color: white;
+    margin:15px;
+    margin-left: 15px;
+
+  }
+
+
+
+
+  @media screen and (max-width:450px){
+
+    .menu a{
+      margin: 2% 1%;
+  border-radius: 20px;
+    }
+    .menu img{
+      border-radius:10px;
+       border:white 2px solid;
+   
+    }
+  
+
+    .btn-agregar{
+      border: silver 1px solid;
+      border-radius: 7px;
+      font-size: 7px;
+      width: 25%;
+      
+    }
+    .card-agregar{
+      width: 100%;
+      margin:auto;
+     
+    }
+    .card-agregar h4{
+      font-size: 15px;
+    }
+    .card-agregar h6{
+      font-size: 13px;
+    }
+    .card-agregar input{
+      font-size: 12px;
+    }
+    .botones-agregar .btn{
+      width: 40%;
+      margin: 5px 2px; 
+    }
+
+
+
+
+
+
+
+    
+  }
+
+  

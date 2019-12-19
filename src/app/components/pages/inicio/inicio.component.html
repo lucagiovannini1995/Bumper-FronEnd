@@ -1,0 +1,233 @@
+
+
+ <section >
+
+  <div class="banner" >
+      <img src="assets/img/baner6.PNG" alt="" >
+      <br>
+      <h4 >En bumper podes encontrar las mejores promos.</h4>
+  </div>
+
+
+
+              <!--Vistas para administrador-->
+            <div *ngIf="logService.getActivar()">
+
+   
+                <button *ngIf="act_agregar" class="btn btn-danger  btn_agregar" (click)="activarAgregar()" >
+                    Agregar Oferta
+       
+                </button>
+
+              <!--
+                Formulario para agregar y editar ofertas
+              -->
+            
+              <div class="" *ngIf="!act_agregar"   >
+                  <div class="card-agregar "  >
+                     
+                  <img  *ngIf="!imgCambiar"  [src]="ofe.imagen" alt="" >
+
+                                                    <div *ngIf="imgCambiar"style="margin-right: auto;margin-left: auto;" >
+                                                        <br><br><br>
+                                                          
+                                                          <div class="loader loader--style1" title="0" >
+                                                              <svg  version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                              width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                                                              <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                                                                s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                                                                c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+                                                              <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                                                                C22.32,8.481,24.301,9.057,26.013,10.047z">
+                                                                <animateTransform attributeType="xml"
+                                                                  attributeName="transform"
+                                                                  type="rotate"
+                                                                  from="0 20 20"
+                                                                  to="360 20 20"
+                                                                  dur="0.5s"
+                                                                  repeatCount="indefinite"/>
+                                                                </path>
+                                                              </svg>
+                                                            
+                                                          </div>
+                                                      </div>
+
+
+                 <form class="formu" >   
+                  <div >                       
+                    <input id="subir"   type="file" (change)="cambiar($event)" accept=".jpg"  title="Editar"  >
+                    <input type="text"  placeholder="* Descripcion"  name="descripcion" [(ngModel)]="ofe.descripcion"  #desc >
+                    <input type="number" placeholder="* Precio" name="precio" [(ngModel)]="ofe.precio"  #precio>
+                  </div>         
+                
+                  
+                    <button class="btn btn-primary m-2 "  (click)="newOferta(desc,precio)">Guardar
+                    </button>
+                    <button class="btn btn-danger m-2"  (click)="cancelar()">Cancelar
+                    </button>
+                  </form>
+             
+              </div>
+              
+            </div>
+          
+
+               
+              
+
+<!-- 
+                Lista que muestra todas las ofertas para el adminitrador
+              -->
+              <div  class="caja-ofer ">
+                  
+                  <div class="item" *ngFor="let ofer of oferta">
+                  
+                  
+                     
+                    <button *ngIf="true" (click)="borrarOferta(ofer)" class="remove"  title="Eliminar">
+                        <img src="assets/img/borrar.png" alt="" >
+                       
+                    </button>
+                
+                 
+                        <div class="card-body " >
+                            
+                            <img [src]="ofer.imagen" alt="" class="" >
+                 
+                        
+                            <h5>{{ofer.descripcion}}</h5>
+                            <p>{{ofer.precio}}</p>
+                        
+
+                            <button class="btn btn-info m-2" (click)="editOferta(ofer)">Editar
+                              <span class="arrow-cont">
+                          
+                                  <img src="assets/img/boton-guardar.png" alt="">
+                                
+                              </span>
+              
+                          </button> 
+            
+                        </div>    
+                        
+
+                     
+                          
+                
+                        
+                   
+                 
+            
+                </div>
+                
+              
+            </div>
+
+             
+            </div>
+    
+
+
+
+
+
+
+
+          <!--vista de todas las ofertas al usuario-->
+          <div *ngIf="!logService.getActivar()">
+      
+
+
+                
+              <!-- Recorriendo arreglo de todas las ofertas en bd -->
+                <div *ngIf="cargar" class="carrusel" >
+              
+
+                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+                            <ol class="carousel-indicators">
+                              <li *ngIf="oferta[0]" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                              <li *ngIf="oferta[1]" data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                              <li *ngIf="oferta[2]"data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                              <li  *ngIf="oferta[3]"data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                              <li  *ngIf="oferta[4]"data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                              <li  *ngIf="oferta[5]"data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                              <li  *ngIf="oferta[6]"data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                              <li  *ngIf="oferta[7]"data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                            </ol>
+                            <div class="carousel-inner ">
+                              <div *ngIf="oferta[0]"class="carousel-item active">
+                                <img class="d-block w-100" [src]="oferta[0].imagen" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5 >{{oferta[0].descripcion}}</h5>
+                                    <p>${{oferta[0].precio}}</p>
+                                  </div>
+                              </div>
+                              <div *ngIf="oferta[1]" class="carousel-item">
+                                <img class="d-block w-100" [src]="oferta[1].imagen" alt="Second slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5 >{{oferta[1].descripcion}}</h5>
+                                    <p>${{oferta[1].precio}}</p>
+                                  </div>
+                              </div>
+                              <div *ngIf="oferta[2]"class="carousel-item">
+                                <img class="d-block w-100" [src]="oferta[2].imagen" alt="Third slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5 >{{oferta[2].descripcion}}</h5>
+                                    <p>${{oferta[2].precio}}</p>
+                                  </div>
+                              </div>
+                              <div *ngIf="oferta[3]"class="carousel-item">
+                                  <img class="d-block w-100" [src]="oferta[3].imagen" alt="fourth slide">
+                                  <div class="carousel-caption d-none d-md-block">
+                                      <h5 >{{oferta[3].descripcion}}</h5>
+                                      <p>${{oferta[3].precio}}</p>
+                                    </div>
+                                </div>
+
+
+                                <div *ngIf="oferta[4]"class="carousel-item " alt="fifth slide">
+                                    <img class="d-block w-100" [src]="oferta[4].imagen" >
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 >{{oferta[4].descripcion}}</h5>
+                                        <p>${{oferta[4].precio}}</p>
+                                      </div>
+                                  </div>
+                                  <div *ngIf="oferta[5]"class="carousel-item">
+                                    <img class="d-block w-100" [src]="oferta[5].imagen" >
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 >{{oferta[5].descripcion}}</h5>
+                                        <p>${{oferta[5].precio}}</p>
+                                      </div>
+                                  </div>
+                                  <div *ngIf="oferta[6]"class="carousel-item">
+                                    <img class="d-block w-100" [src]="oferta[6].imagen" >
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5 >{{oferta[6].descripcion}}</h5>
+                                        <p>${{oferta[6].precio}}</p>
+                                      </div>
+                                  </div>
+                                  <div *ngIf="oferta[7]"class="carousel-item">
+                                      <img class="d-block w-100" [src]="oferta[7].imagen" >
+                                      <div class="carousel-caption d-none d-md-block">
+                                          <h5 >{{oferta[7].descripcion}}</h5>
+                                          <p>${{oferta[7].precio}}</p>
+                                        </div>
+                                    </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+             
+
+
+                </div>
+              
+          </div>
+    
+        </section>

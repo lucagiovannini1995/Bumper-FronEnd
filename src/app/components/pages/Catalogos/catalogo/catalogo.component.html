@@ -1,0 +1,201 @@
+
+ <section   >
+
+    
+      <div *ngIf="!prodService.mostrar" style="margin-right: auto;margin-left: auto;">
+          <h3>Cargando...</h3>
+          <div class="loader loader--style1" title="0">
+              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+              width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+              <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+              <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                C22.32,8.481,24.301,9.057,26.013,10.047z">
+                <animateTransform attributeType="xml"
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 20 20"
+                  to="360 20 20"
+                  dur="0.5s"
+                  repeatCount="indefinite"/>
+                </path>
+              </svg>
+            </div>
+      </div>
+      
+      <!--menu-->
+      <div *ngIf="prodService.mostrar" class=" menu ">
+          <a routerLink="bebidas" class=" " > 
+              <img  src="assets/img/bebidasPortada.png" alt="" > 
+          </a> 
+        
+        <a  routerLink="alimentos" class="  " >
+          <img src="assets/img/galleta.jpg" alt="">
+        </a> 
+      </div>
+
+      
+    
+
+         <div *ngIf="logService.getActivar()">
+         
+          
+          
+   <!--boton para agregar productos-->
+            <button *ngIf="act_agregar" class="btn btn-danger  btn-agregar" (click)="activarAgregar()" >   
+           Agregar Producto
+          </button>
+
+           
+
+            <div *ngIf="!act_agregar"  >
+                <div class="card-agregar " >
+                      <div>
+                        <h4 style="text-align: center;margin: 10px auto;">Agregar producto</h4>
+                        <hr>
+
+                        <img *ngIf="imgNew" [src]="imagenAgregar" alt="" class="foto-prod" >
+
+                        <div *ngIf="cargando" style="margin-left: 6em;">
+                          
+                        <div class="loader loader--style1" title="0">
+                              <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                              width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                              <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                                s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                                c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+                              <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                                C22.32,8.481,24.301,9.057,26.013,10.047z">
+                                <animateTransform attributeType="xml"
+                                  attributeName="transform"
+                                  type="rotate"
+                                  from="0 20 20"
+                                  to="360 20 20"
+                                  dur="0.5s"
+                                  repeatCount="indefinite"/>
+                                </path>
+                              </svg>
+                        </div>
+                        </div>
+                      
+                          <input id="subir"  type="file" (change)="newImage($event)" accept=".jpg, .png"  title="Editar" class="">
+
+                        
+                              <h4 style=" margin-left: 20px;">-Categoria:</h4>
+
+                              
+                              <h6 style="margin-left: 50px;display: block;">Bebidas:
+
+                        
+                          <select name="caregoria" id="cat" [(ngModel)]="catSel"  style="width: 50%; text-align: center;" >
+                            <option value="{{categoria[0]}}">{{categoria[0]}}</option>
+                            <option value="{{categoria[1]}}">{{categoria[1]}}</option>
+                            <option value="{{categoria[2]}}">{{categoria[2]}}</option>
+                            <option value="{{categoria[3]}}">{{categoria[3]}}</option>
+                            <option value="{{categoria[4]}}">{{categoria[4]}}</option>
+                          </select>
+                        </h6>
+                        
+                            <h6 id="categoria" style="margin-left: 50px; " >Alimentos:
+                              <input  type="radio" name="categoria" value="{{categoria[5]}}" (change)="catSelec($event)" >  
+                            </h6>
+                            
+                    
+                      
+                            <div class="inputs-agregar">
+
+                              <input   type="text" name="nombre"  placeholder="*nombre de producto" #nombre>
+                              <input type="number" name="precio"  placeholder="*Precio" #precio>
+
+                            </div>
+                       
+                        </div>
+
+       
+                          <div class="botones-agregar">
+                          <button class="btn btn-primary " (click)="agregarProducto(nombre,precio)"  >Guardar
+                              <span class="arrow-cont">
+                          
+                                  <img src="assets/img/boton-guardar.png" alt="">
+                                
+                              </span>
+
+                          </button>
+                          <button class="btn btn-danger " (click)="cancelar()" >Cancelar
+                              <span class="arrow-cont">
+                          
+                                  <img src="assets/img/error.png" alt="">
+                                
+                              </span>
+
+                          </button>
+
+
+                        </div>
+
+          </div>
+         </div>
+        </div>
+
+
+ 
+ 
+
+
+      <div *ngIf="prodService.mostrar" class="catalogo  ">
+
+                <div *ngFor="let p of productos;let i=index"class="card1 "  >
+       
+                
+                        <div>
+                          <div >
+                            <button *ngIf="logService.getActivar()" (click)="borrarProd(p._id)" class="btn-borrar"   title="Eliminar">
+                                <img src="assets/img/borrar.png" alt=""  >
+                              </button>
+                            </div>
+                    <img [src]="p.imagen" class="imagen" alt="" >
+                      
+                          <div class="text-center card-footer">
+                            <h5 ><b>{{p.nombre}}</b></h5> 
+                            <h6 class="text-danger">${{p.precio}}</h6> 
+                          </div>
+                       </div>
+                       
+                  
+                 
+
+           
+                      <div *ngIf="logService.getActivar()" class="formu">
+            
+                          
+                            <input id="subir"  type="file" (change)="cambiar($event,i)" accept=".jpg"  title="Editar" >
+                            <input   type="text" name="nombre" [(ngModel)]="p.nombre"   #nombre>
+                            <input type="number" name="precio" [(ngModel)]="p.precio" #precio>
+                          
+                       
+                                <button class="btn btn-primary m-2 " (click)="editarProd(p,nombre,precio)">Guardar           
+                                        <img src="assets/img/boton-guardar.png" alt="">
+                                </button>
+                                <button class="btn btn-danger m-2" (click)="cancelar()">Cancelar
+                                      <img src="assets/img/error.png" alt="">
+                              </button>
+                              
+                           
+                          
+                           
+                        </div>
+                    
+                      
+                   
+                 
+          
+          
+           
+            </div>
+      </div>
+
+   
+   
+
+    </section>

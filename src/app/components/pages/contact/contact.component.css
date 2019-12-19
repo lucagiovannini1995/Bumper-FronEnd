@@ -1,0 +1,92 @@
+agm-map {
+    height: 300px;
+  }agm-map {
+  height: 400px;
+}
+
+.titulo{
+  margin: 40px auto 0 auto ;
+
+
+}
+
+.row-formu{
+  margin: 80px auto;
+  display: block;
+  width: 100%;
+  
+}
+.row-map{
+  margin:auto ;
+  display: block;
+  width: 100%;
+}
+.direccion{
+  text-align: center;
+  margin: auto;
+  color: lightgray;
+}
+
+.card-gen{
+  
+  width: 50%;
+  display: inline-block;
+
+  vertical-align: middle;
+ 
+}
+
+
+
+.formulario{
+    
+  margin: auto;
+  width: 350px;
+  background-color: lightgrey;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 12px 0 rgba(170, 170, 170);
+    border-radius: 5px; /* 5px rounded corners */
+
+ text-align: center;
+    
+  }
+
+
+  .foto{
+      border: silver 3px solid;
+      border-radius: 15px; 
+     
+  }
+
+  form input{
+    height:10px;
+    width: 90%;
+  }
+
+  form button{
+  
+    margin: 10px;
+    background-color: hsl(146, 35%, 55%);
+    border-radius: 10px;
+    border:none;
+    font-size: 20px;
+    padding: 1%;
+    width: 25%;;
+
+    position: relative;
+	top: 2px;
+	left: 2px;
+  }
+
+
+
+
+  @media screen and  (max-width: 990px){
+
+    .card-gen{
+      width: auto;
+      display:block;
+    }
+
+ 
+}

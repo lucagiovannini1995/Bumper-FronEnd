@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ProductoService } from './services/producto.service';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'frontEnd';
+
+  constructor(public serv:LoginService){
+
+  }
+
+  title = 'Bumper Black';
+
+
+  
+
 }

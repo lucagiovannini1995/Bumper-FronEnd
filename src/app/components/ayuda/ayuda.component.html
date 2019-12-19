@@ -1,0 +1,80 @@
+
+<section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
+
+
+<div style="margin: 8em;color: lightgray">
+  <h3>Manual de usuario:</h3>
+  <div style="margin-left:18em;">
+        
+          <button style="border: none;background: none;" (click)="cambioLogin()">
+              <h6 ><b><u>Login</u></b></h6>
+          </button>
+          <br>
+        
+                  <div *ngIf="login">
+                    <h6>Ingresar:</h6>
+                        <p>-Para Iniciar sesion como administrador debe dirigirse a la seccion de pie de pagina y seleccionar el boton de "ingresar" que se encuantra en el extremo derecho</p>
+                      <img src="assets/img/ingresar.PNG" style="width: 400px; margin-left:5em; " alt="">
+                      <h6>Salir:</h6>
+                      <P>-Para salir del usuario administrador se realiza de kla misma forma que ingresar</P>
+                      <img src="assets/img/salir.PNG" style="width: 400px; margin-left:5em; " alt="">
+                  </div>
+
+            
+                  <button style="border: none;background: none;" (click)=" cambioIni()">
+                    <h6 ><b><u>Inicio</u></b></h6>
+                  </button>
+                            <br>
+                          
+                          <div *ngIf="inicio">
+                              <p>Una vez iniciado sesion como administrador, en la pestaña de inicio se habilita la posibilidad de agregar editar y eliminar Ofertas <br></p>
+                              <h6>Agregar Oferta:</h6>
+                              <p>-Debe seleccionar el boton de "Agregar oferta" </p>
+                              <img src="assets/img/agregarOfer.PNG" style="width: 400px; margin-left:5em; " alt="">
+                            
+                            <P>-Seguido se abrira el siguiente formulario en el cual debe insertar una imagen obligatoria y de forma opcional una descrpcion y precio.</P>
+                            <img src="assets/img/agregarOfer2.PNG" style="width: 400px; margin-left:5em; " alt="">
+                            <br>
+                            <h6>Editar oferta:</h6>
+                              <p>-Debe seleccionar el boton de "editar" que se encuentra debajo de cada imagen.</p>
+                              <img src="assets/img/editOfer.PNG" style="width: 400px; margin-left:5em; " alt="">
+                              <P>-Seguido se abrira el siguiente formulario en la parte superior de la pagina en el cual podra editar la imagen seleccionada.<br>Para guardar los cambios debe seleccionar el boton de guardar o cancelar en su defecto.</P>
+                              <img src="assets/img/editOfer2.PNG" style="width: 400px; margin-left:5em; " alt="">
+                              <br>
+                            <h6>Eliminar Oferta:</h6>
+                              <p>-Debe seleccionar la cruz que se encuentra arriba de cada imagen.</p>
+                              <img src="assets/img/elimPRo.PNG" style="width: 200px; margin-left:5em; " alt="">
+                                   
+        
+                          </div>
+
+        <button style="border: none;background: none;" (click)="cambioCat()">
+              <h6 ><b><u>Catalogo</u></b></h6>
+          </button>
+
+                  <div *ngIf="cat">
+                      
+                          <p>Una vez iniciado sesion como administrador, en la pestaña de catalogo se habilita la posibilidad de agregar editar y eliminar productos <br></p>
+                          <h6>Agregar producto:</h6>
+                          <p>-Debe seleccionar el boton de "Agregar producto" </p>
+                          <img src="assets/img/agregarPro.PNG" style="width: 400px; margin-left:5em; " alt="">
+                        
+                        <P>-Seguido se abrira el siguiente formulario en el cual debe completar todos los campos para poder agregar un producto.</P>
+                        <img src="assets/img/agregarPro2.PNG" style="width: 600px; margin-left:5em; " alt="">
+                        <br>
+                        <h6>Editar producto:</h6>
+                          <p>-Debajo de cada producto tendra la posibilidad de cambiar la imagen, el nombre o el precio. <br>Para guardar los cambios debe seleccionar el boton de guardar o cancelar en su defecto.</p>
+                          <img src="assets/img/editPro.PNG" style="width: 400px; margin-left:5em; " alt="">
+                          <br>
+                        <h6>Eliminar producto:</h6>
+                          <p>-Debe seleccionar la cruz que se encuentra arriba de cada producto.</p>
+                          <img src="assets/img/elimPRo.PNG" style="width: 200px; margin-left:5em; " alt="">
+                               
+
+                    </div>
+          
+    
+    </div>
+</div>
+
+</section>

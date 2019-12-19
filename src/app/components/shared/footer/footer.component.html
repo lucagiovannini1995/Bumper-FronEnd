@@ -1,0 +1,36 @@
+<footer class="ae-container-fluid rk-footer " style="background-color: white; height: 40px; ">
+  <div class="ae-grid ae-grid--collapse" >
+    <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
+      <ul class="rk-menu rk-footer-menu">
+         
+      </ul>
+      <p class="rk-footer__text rk-footer__copy ">
+         <span class="ae-u-bold">
+            <a *ngIf="logService.getActivar()" routerLink="/ayuda" class="ae-u-bolder" style="color: black" >Ayuda</a>
+         </span>
+         </p>
+    </div>
+    <div class="ae-grid__item item-lg-4 au-xs-ta-center">
+      <br>
+      <a href="https://www.facebook.com/" class="rk-social-btn " style="color: black">
+        <svg>
+          <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
+        </svg></a>
+       
+        <a href="https://www.instagram.com/bumper_black/" class="rk-social-btn "style="color: black">
+        <svg>
+          <use xlink:href="assets/img/symbols.svg#icon-pinterest"></use>
+        </svg></a>
+       </div>
+    <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
+      <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold" style="color: black">Email: </span><span class="ae-u-bolder"> <a  class="rk-dark-color ">bumperblack@gmail.com </a></span></p>
+      <p class="rk-footer__text rk-footer__by"> 
+        <a *ngIf="!logService.getActivar()" routerLink="/admin" class="ae-u-bolder" style="color: black">Ingresar</a>
+   
+     <button (click)="salir()" *ngIf="logService.getActivar()" style="background: none;border: none;" >
+        <a  routerLink="/home" class="ae-u-bolder"style="color: black">Salir</a>
+     </button>
+      </p>
+    </div>
+  </div>
+</footer>

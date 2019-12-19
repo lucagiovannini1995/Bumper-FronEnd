@@ -1,1 +1,133 @@
 /* You can add global styles to this file, and also import other style files */
+
+.catalogo{
+   
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  margin: auto;
+ 
+    }
+
+
+  .card1{
+    
+  float: left;
+  min-width: 22.5%;
+    width: 22.5%;
+ 
+  background-color: white;
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    margin: 20px 1.25%;
+ 
+    
+  }
+
+  /* On mouse-over, add a deeper shadow */
+  .card1:hover {
+    box-shadow: 0 8px 13px 0 rgba(255, 255, 255, 0.8);
+  }
+  
+
+
+  .card1 .imagen{
+      width: 150px;
+      height: 150px;
+       
+     display: block;
+     margin: 30px auto; 
+   
+  }
+
+ 
+  .btn-borrar{
+    background-color: white; 
+    border: none;
+  }
+
+
+  
+  .formu{
+ 
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+  }
+  
+  .formu input {
+  
+   height: 30px;
+   width: 95%;
+    
+  }
+  .formu input[type="file"]{
+    width: 100%;
+    margin: 10px 0;
+  }
+
+
+  
+
+  @media screen and  (max-width: 1000px){
+
+    .card1 .imagen{
+      width: 100px;
+      height: 100px;
+  }
+}
+  @media screen and (max-width:700px)and (min-width:450px) {
+    .card1{
+        width: 43.5%;
+        margin: 20px 3.25%;  
+      }
+  }
+
+ 
+
+
+  @media screen and (max-width:450px){
+
+    .catalogo{
+      width: 100%;
+      margin: auto;
+   
+      }
+    .card1{
+        width: 80%;
+        margin: 10px 10%;
+        
+      }
+
+      .card-footer h5{
+        font-size: 13px;
+      }
+      .card-footer h6{
+        font-size: 11px;
+      }
+      .card1 .imagen{
+        width: 100px;
+        height: 100px;  
+        margin: 30px auto; 
+    }
+
+    .formu input{
+      font-size: 12px;
+    }
+
+
+    .btn-primary {
+      width: 40%;
+    font-size: 11px;
+    }
+    .btn-danger{
+      width: 40%;
+      font-size: 11px;
+    }
+    
+  }
+
+  
