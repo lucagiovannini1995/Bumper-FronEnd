@@ -28,7 +28,7 @@
     "angular-progress-bar": "^1.0.9",
     "core-js": "^2.5.4",
     "firebase": "^6.1.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "promise-polyfill": "^8.1.0",
     "rxjs": "~6.3.3",
     "save": "^2.4.0",
